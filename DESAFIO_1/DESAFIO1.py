@@ -1,13 +1,13 @@
-def chooseBestSum (maxSum, nTowns, ls):
+def chooseBestSum (t, k, ls):
     # Testa casos onde a soma é inviável
-    if len(ls) <= nTowns:
+    if len(ls) <= k:
         return None
     for x in ls:
-        if x >= maxSum:
+        if x >= t:
             return None
     # Cria um array com posições = quantidade de cidades contendo indexes para realizar os testes em ls        
     _index = []
-    for x in range(nTowns):
+    for x in range(k):
         _index.append(x)
     # Armazena todas as combinações válidas em um array
     idealSum = 0
@@ -20,9 +20,9 @@ def chooseBestSum (maxSum, nTowns, ls):
         sumTest = 0
         for x in _index:
             sumTest += ls[x]
-        if sumTest == maxSum:   # Encerra a função caso haja uma soma perfeita
+        if sumTest == t:   # Encerra a função caso haja uma soma perfeita
             return test
-        if sumTest < maxSum and sumTest > idealSum:
+        if sumTest < t and sumTest > idealSum:
             idealSum = sumTest
         
         # Manipulação das possibilidades
