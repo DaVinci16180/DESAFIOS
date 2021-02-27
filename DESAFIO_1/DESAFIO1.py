@@ -21,7 +21,7 @@ def chooseBestSum (t, k, ls):
         for x in _index:
             sumTest += ls[x]
         if sumTest == t:   # Encerra a função caso haja uma soma perfeita
-            return test
+            return sumTest
         if sumTest < t and sumTest > idealSum:
             idealSum = sumTest
         
